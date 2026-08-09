@@ -1,3 +1,16 @@
+ """
+        LeetCode :Two Sum
+        Difficulty: Easy
+
+        Approach:
+        Store each number and its index in a dictionary.
+        For every number, check whether its complement
+        (target - num) was already seen.
+
+        Time Complexity: O(n)
+        Space Complexity: O(n)
+        """
+
 class Solution(object):
     def twoSum(self, nums, target):
         """
@@ -5,11 +18,11 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        dict={}
+        seen ={}
         for i , num in enumerate(nums):
             n=target-num
-            if n not in dict:
-                dict[num]=i
+            if n not in seen :
+                seen [num]=i
             else:
-                return [dict[n],i]
+                return [seen [n],i]
        
